@@ -12,6 +12,7 @@ def start():
                 print_message(text.open_successful)
             case 2:
                 model.save_file()
+                print_message(text.save_file)
             case 3:
                 show_contacts(model.phone_book)
             case 4:

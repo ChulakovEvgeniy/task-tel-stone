@@ -33,3 +33,5 @@ exit_programm = 'Приятно было поработать возвращай
 
 def contact_deleted(name: str):
     return f'Контакт {name} успешно удален'
+
+save_file = 'Файл успешно сохранен'

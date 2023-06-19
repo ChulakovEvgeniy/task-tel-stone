@@ -3,11 +3,12 @@ path = 'phones.txt'
 
 
 def open_file():
-    with open(path, 'r', encoding='UTF-8') as file:
-        data = file.readlines()
-    for contact in data:
-        user_id, name, phone, comment, *_ = contact.strip().split(':')
-        phone_book.append({'id': user_id, 'name': name, 'phone': phone, 'comment': comment})
+    if len(phone_book) == 0:
+        with open(path, 'r', encoding='UTF-8') as file:
+            data = file.readlines()
+        for contact in data:
+            user_id, name, phone, comment, *_ = contact.strip().split(':')
+            phone_book.append({'id': user_id, 'name': name, 'phone': phone, 'comment': comment})
 
 
 def check_id():
