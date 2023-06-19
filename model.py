@@ -41,6 +41,7 @@ def deleted(index: int):
     contact = phone_book.pop(index-1)
     return contact.get('name')
 
-
-
-
+def save_file():
+    with open(path, 'w', encoding='UTF-8') as file:
+        for contact in phone_book:
+            file.write(f"{contact.get('id')}:{contact.get('name')}:{contact.get('phone')}:{contact.get('comment')}\n")
