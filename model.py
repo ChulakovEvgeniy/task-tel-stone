@@ -31,21 +31,21 @@ class PhoneBook:
     def add_contact(self,new: Contact):
         self.contacts.append(new)
 
-    def search(self,word: str) -> list[Contact]:
-        result = []
+    def search(self ,word: str) -> list[Contact]:
+        result = PhoneBook('поиск')
         for contact in self.contacts:
-            if word.lower() in contact.for_search().lower():
-                result.append(contact)
-                break
+            if word.lower() in contact.for_search():
+                result.contacts.append(contact)
         return result
 
 
-    def change(self,index: int, new: dict[str, str]):
+    def change(self,index: int, new):
         for contact in self.contacts:
             if index == contact.uid:
-                contact.name = new.get('name') if not new.get('name') else contact.name
-                contact.phone = new.get('phone') if not new.get('phone') else contact.phone
-                contact.comment = new.get('comment') if not new.get('comment') else contact.comment
+                contact.name = contact.name if new.name == '' else new.name
+                contact.phone = contact.phone if new.phone == '' else new.phone
+                contact.comment = contact.comment if new.comment == '' else new.comment
+
 
         # for key, field in new.items():
         #     if field != '':

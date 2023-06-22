@@ -18,7 +18,7 @@ def print_message(message: str):
     print('=' * length + '\n')
 
 
-def show_contacts(book: PhoneBook):
+def show_contacts(book):
     if book.contacts:
         print('\n' + '=' * 67)
         for contact in book.contacts:
